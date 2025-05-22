@@ -33,8 +33,8 @@
   }
   
   .mini-avatar {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -81,7 +81,7 @@
   .hero-name {
     font-size: 3rem;
     font-weight: 800;
-    color: #686666;
+    color: #3b0404;
     font-family: 'Helvetica Neue', sans-serif;
     line-height: 1.1;
     text-transform: uppercase;
