@@ -39,7 +39,7 @@
     object-fit: cover;
     object-position: center top;
     transform: scale(1.2); /* zooms in for a tighter crop */
-    border: 2px solid #ccc;
+    border: 2px solid #460202;
   }
   
   
@@ -73,7 +73,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .hero-name {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #686666;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+  }
+  .hero-subtext {
+    font-size: 1.2rem;
+    color: #686666;
+    font-style: italic; /* optional flair */
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-top: 0;
+    text-align: center;
   }
   
   .magnified-image {
