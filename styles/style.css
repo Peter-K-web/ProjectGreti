@@ -1,233 +1,126 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Root font and palette */
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  
-  /* Navigation Bar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  
-  .avatar-container {
-    flex-shrink: 0;
-  }
-  
-  .mini-avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    transform: scale(1.2); /* zooms in for a tighter crop */
-    border: 2px solid #460202;
-  }
-  
-  
-  
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #0077cc;
-  }
-  
-  .nav-toggle {
-    display: none;
-    background: none;
-    font-size: 1.8rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Hero (Magnified Image) */
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
-    flex-wrap: wrap;
-    position: relative;
-    text-align: left;
-    background-image: url('home.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    min-height: 60vh;
-    border-radius: 2rem
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    border-radius: 2rem
-  }
-  
-  .hero > * {
-    position: relative;
-    z-index: 2;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .hero-text {
-    max-width: 600px;
-  }
+/* Root font and palette */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-  .hero-name {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #fff;
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  .hero-subtext {
-    font-size: 1rem;
-    color: #ddd;
-    font-style: italic; /* optional flair */
-    font-family: 'Helvetica Neue', sans-serif;
-    margin-top: 0.75rem;
-    text-align: center;
-  }
-  
-  .magnified-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    transform: scale(1.2); /* zooms in */
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 2;
-  }
-  @media (max-width: 480px) {
-    .magnified-image {
-      width: 180px;
-      height: 180px;
-    }
-  }
-   
-  /* Gallery Section */
-  .gallery {
-    padding: 2rem;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  
-  .gallery-container {
-    display: flex;
-    gap: 1rem;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-  }
-  
-  .gallery-container img {
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-    scroll-snap-align: center;
-    border-radius: 8px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-container img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* About Section */
-  .about {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .about h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .about p {
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
-  /* Footer */
-  footer {
-    background: #eee;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 2rem;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background: rgba(255, 255, 255, 0.9);
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 200px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-toggle {
-      display: block;
-    }
-  
-    .gallery-container {
-      justify-content: start;
-    }
-  
-    .magnified-image {
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-  
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.mini-avatar {
+  width: 40px; /* Maintained proportions */
+  height: 40px; /* Maintained proportions */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #460202;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-image: url('home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.hero-name {
+  font-size: 2.5rem; /* Adjusted for better proportions */
+  font-weight: 600;
+  color: #fff;
+}
+
+.hero-subtext {
+  font-size: 1rem;
+  color: #ddd;
+  font-style: italic;
+}
+
+.magnified-image {
+  width: 150px; /* Maintained proportions */
+  height: 150px; /* Maintained proportions */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 2rem;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.gallery-image {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+/* Footer */
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}

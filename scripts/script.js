@@ -1,37 +1,60 @@
 // Mobile Navigation Toggle
-const navToggle = document.getElementById("nav-toggle");
-const navLinks = document.getElementById("nav-links");
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
 });
 
-// Optional: Smooth horizontal scroll for gallery (optional visual polish)
-const gallery = document.getElementById("gallery-container");
+// Lazy Loading Images
+document.addEventListener("DOMContentLoaded", function () {
+    const lazyImages = document.querySelectorAll("img.lazyload");
+    lazyImages.forEach((img) => {
+        img.src = img.dataset.src;
+    });
+});
 
-// Add scroll behavior with mouse drag (optional but nice touch)
-let isDown = false;
-let startX;
-let scrollLeft;
+// Gallery Autoplay and Navigation
+const galleryContainer = document.querySelector('.gallery-container');
+const prevButton = document.querySelector('.gallery-prev');
+const nextButton = document.querySelector('.gallery-next');
 
-gallery.addEventListener("mousedown", (e) => {
-  isDown = true;
-  gallery.classList.add("active");
-  startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
+let scrollAmount = 0;
+const scrollStep = 200;
+const autoplayInterval = 3000;
+
+// Autoplay Functionality
+function autoplayGallery() {
+    scrollAmount += scrollStep;
+    if (scrollAmount >= galleryContainer.scrollWidth) {
+        scrollAmount = 0;
+    }
+    galleryContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
+}
+setInterval(autoplayGallery, autoplayInterval);
+
+// Manual Navigation
+prevButton.addEventListener('click', () => {
+    scrollAmount -= scrollStep;
+    if (scrollAmount < 0) {
+        scrollAmount = galleryContainer.scrollWidth - galleryContainer.clientWidth;
+    }
+    galleryContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
 });
-gallery.addEventListener("mouseleave", () => {
-  isDown = false;
-  gallery.classList.remove("active");
-});
-gallery.addEventListener("mouseup", () => {
-  isDown = false;
-  gallery.classList.remove("active");
-});
-gallery.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 2; // Adjust scroll speed here
-  gallery.scrollLeft = scrollLeft - walk;
+
+nextButton.addEventListener('click', () => {
+    scrollAmount += scrollStep;
+    if (scrollAmount >= galleryContainer.scrollWidth) {
+        scrollAmount = 0;
+    }
+    galleryContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+    });
 });

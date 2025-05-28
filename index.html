@@ -12,74 +12,66 @@
 <body>
   <!-- Navigation Bar -->
   <header>
-    <div class="container">
-    <nav class="navbar">
+    <div class="container d-flex justify-content-between align-items-center py-3">
       <div class="avatar-container">
-        <img src="assets/avatar.jpg" alt="Mini avatar image" class="mini-avatar" />
+        <img src="assets/avatar.jpg" alt="Mini avatar image" class="mini-avatar rounded-circle" />
       </div>
-      <div class="nav-links" id="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Gallery</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <button class="nav-toggle" id="nav-toggle">&#9776;</button>
-    </nav>
+      <nav class="navbar">
+        <div class="nav-links d-none d-md-flex gap-3">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contacts.html" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle d-md-none" id="nav-toggle">&#9776;</button>
+      </nav>
     </div>
   </header>
 
   <!-- Magnified Image Section -->
-  <div class="container">
-  <section class="hero">
-    <img src="assets/avatar.jpg" alt="Magnified image of me" class="magnified-image" />
-     <div class="hero-text">
-      <h1 class="hero-name">Kahuho Peter Kariuki</h1>
-      <p class="hero-subtext">Bachelor of Science, Business Information Technology. | CCNA | 
-        A visionary mind navigating the frontiers of cosmic theory and digital craft.</p>
-     </div>
-  </section>
+  <div class="container my-4">
+    <section class="hero d-flex flex-column flex-md-row align-items-center gap-4">
+      <img src="assets/avatar.jpg" alt="Magnified image of me" class="magnified-image rounded-circle" />
+      <div class="hero-text text-center text-md-start">
+        <h1 class="hero-name">Kahuho Peter Kariuki</h1>
+        <p class="hero-subtext">Bachelor of Science, Business Information Technology. | CCNA | 
+          A visionary mind navigating the frontiers of cosmic theory and digital craft.</p>
+      </div>
+    </section>
   </div>
-    
 
   <!-- Moving Gallery Section -->
-  <section class="gallery">
-    <div class="gallery-container" id="gallery-container">
-      <!-- Gallery images will be inserted dynamically or statically -->
-      <img src="assets/gallery/slide1.jpg" alt="Gallery image 1" />
-      <img src="assets/gallery/slide2.jpg" alt="Gallery image 2" />
-      <img src="assets/gallery/slide3.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide4.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide5.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide6.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide7.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide8.jpg" alt="Gallery image 3" />
-      <img src="assets/gallery/slide9.jpg" alt="Gallery image 3" />
-      <!-- Add more images as needed -->
+  <section id="gallery" class="gallery">
+    <div class="container position-relative">
+      <button class="gallery-prev" aria-label="Previous">&lt;</button>
+      <div class="gallery-container d-flex gap-3 overflow-hidden">
+        <img src="assets/gallery/slide1.jpg" alt="Gallery image 1" class="gallery-image lazyload" data-src="assets/gallery/slide1.jpg" />
+        <img src="assets/gallery/slide2.jpg" alt="Gallery image 2" class="gallery-image lazyload" data-src="assets/gallery/slide2.jpg" />
+        <img src="assets/gallery/slide3.jpg" alt="Gallery image 3" class="gallery-image lazyload" data-src="assets/gallery/slide3.jpg" />
+        <img src="assets/gallery/slide4.jpg" alt="Gallery image 4" class="gallery-image lazyload" data-src="assets/gallery/slide4.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide5.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide6.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide7.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide8.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide9.jpg" />
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide10.jpg"/>
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide11.jpg"/>
+        <img src="assets/gallery/slide5.jpg" alt="Gallery image 5" class="gallery-image lazyload" data-src="assets/gallery/slide12.jpg"/>
+    
+      </div>
+      <button class="gallery-next" aria-label="Next">&gt;</button>
     </div>
   </section>
 
-  <!-- About Paragraph Section -->
-  <section class="about">
+  <!-- About Section -->
+  <section id="about" class="about text-center">
     <h2>About Me</h2>
-    <p>
-        I am, a digital artisan with a background in Business Information Technology,
-        holding a Bachelor of Science degree. My journey is one of 
-        perpetual inquiry — driven by a fascination with 
-        the invisible architecture that binds the cosmos and 
-        the elegant logic behind digital systems. I thrive 
-        at the intersection of creative expression and 
-        structured thought, blending aesthetic sensibilities 
-        with technological rigor. Whether navigating the 
-        frameworks of front-end design or contemplating the 
-        abstract frontiers of theory, I bring vision, 
-        precision, and quiet resolve to all I do, all while carrying
-        out untold adventures to rival Indiana Jones.
-    </p>
+    <p>Welcome to my personal website! I am Kahuho Peter Kariuki, a visionary mind navigating the frontiers of cosmic theory and digital craft.</p>
   </section>
 
   <!-- Footer Section -->
-  <footer>
-    <p>© 2025 My Name. All rights reserved.</p>
+  <footer class="text-center py-3">
+    <p>© 2023 My Minimalist Webpage | <a href="mailto:your-email@example.com">Email Me</a></p>
   </footer>
 
   <script src="scripts/script.js"></script>
